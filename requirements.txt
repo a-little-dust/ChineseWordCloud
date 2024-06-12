@@ -2,5 +2,5 @@ jieba
 pandas
 wordcloud
 numpy
-scipy
+imageio
 matplotlib
