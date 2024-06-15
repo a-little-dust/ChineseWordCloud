@@ -11,11 +11,11 @@ app = Flask(__name__)
 
 stopwords_filename = 'data/stopwords.txt'
 font_filename = 'fonts/STFangSong.ttf'
-template_dir = 'data/templates/'
+template_dir = 'D:/vs_temp/news-front/news/src/assets/templates/'
 #创建一个列表，它包含各个template的文件名
-pic_list=['color_love.png','love.png']
+pic_list=['balloons.png','love.png','pikaqiu.jpg','china.png']
 #生成的文件所存放的路径
-output_dir='output'
+output_dir='D:/vs_temp/news-front/news/src/assets/output'
 stopwords=None
 # 我们的项目：模板图片的路径应该是写定的。用户或许有机会选择模板
 #保存路径是写定的。生成的时候是根据字符串生成而不是找文件
@@ -77,9 +77,9 @@ def generate_by_text(text,pic_no):
         bimgColors = ImageColorGenerator(bimg)  # 把图片的颜色存入bimgColors
         wordcloud.recolor(color_func=bimgColors)  # 对词云进行着色
         # 输出路径为图片名字的前缀+输入文件名字的前缀+.png
-        output_filename =output_dir+'/'+ prefix + '_' + input_prefix + '.png'
-        print('保存路径为', output_filename)
-        wordcloud.to_file(output_filename)
+        output_filename =prefix + '_' + input_prefix + '.png'
+        print('保存路径为', output_dir+'/'+ output_filename)
+        wordcloud.to_file(output_dir+'/'+ output_filename)
         return output_filename
 #根据文件名生成词云
 def main(input_filename):
